@@ -21,8 +21,11 @@ public:
     void setup(string vezerPath,int desireFrame);
     void VezerSetup(string path);
     void VezerUpdate();
+
+    
     
     void record(ofFbo& scene);
+    void draw();
     
     
     ofBufferObject pixelBufferBack, pixelBufferFront;
