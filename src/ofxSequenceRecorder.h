@@ -13,26 +13,20 @@
 class ofxSequenceRecorder{
 public:
     
-    //----Vezer
-    ofxVezer::Parser parser;
-    ofxVezer::Composition comp;
-    ofxVezer::Provider provider;
     void setup();
     void setup(string vezerPath,int desireFrame);
     void VezerSetup(string path);
     void VezerUpdate();
-
-    
-    
     void record(ofFbo& scene);
     void draw();
-    
-    
+private:
     ofBufferObject pixelBufferBack, pixelBufferFront;
-    
     ofPixels pixels;
     int frame= 0;
     bool isRecording = true;
     string dirPath;
-
+    //----Vezer
+    ofxVezer::Parser parser;
+    ofxVezer::Composition comp;
+    ofxVezer::Provider provider;
 };
