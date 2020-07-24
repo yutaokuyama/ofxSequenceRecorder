@@ -2,4 +2,4 @@
 ## how to use 
 call ```setup()``` in setup
 and
-```ofxSequenceRecorder.recort(fbo);```
+```ofxSequenceRecorder.record(fbo);```
