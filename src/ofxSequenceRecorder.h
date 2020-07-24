@@ -14,6 +14,7 @@ class ofxSequenceRecorder{
 public:
     
     void setup();
+    void setup(glm::vec2 resolution);
     void setup(string vezerPath,int desireFrame);
 //    void VezerSetup(string path);
 //    void VezerUpdate();

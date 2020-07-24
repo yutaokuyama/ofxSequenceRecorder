@@ -15,6 +15,15 @@ void ofxSequenceRecorder::setup(){
     pixelBufferBack.allocate(ofGetWidth()*ofGetHeight()*4,GL_DYNAMIC_READ);
     pixelBufferFront.allocate(ofGetWidth()*ofGetHeight()*4,GL_DYNAMIC_READ);
 }
+void ofxSequenceRecorder::setup(glm::vec2 resolution){
+    
+    dirPath = ofToString(ofGetTimestampString());
+    frame = 0;
+    
+    pixelBufferBack.allocate(resolution.x*resolution.y*4,GL_DYNAMIC_READ);
+    pixelBufferFront.allocate(resolution.x*resolution.y*4,GL_DYNAMIC_READ);
+    
+}
 
 //
 //void ofxSequenceRecorder::VezerSetup(string path){
