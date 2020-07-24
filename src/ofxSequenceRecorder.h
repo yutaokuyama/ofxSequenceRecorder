@@ -7,18 +7,19 @@
 
 #pragma once
 #include "ofMain.h"
-#include "ofxVezer.h"
-#include "ParserCereal.h"
+//#include "ofxVezer.h"
+//#include "ParserCereal.h"
 
 class ofxSequenceRecorder{
 public:
     
     void setup();
     void setup(string vezerPath,int desireFrame);
-    void VezerSetup(string path);
-    void VezerUpdate();
+//    void VezerSetup(string path);
+//    void VezerUpdate();
     void record(ofFbo& scene);
     void draw();
+    
 private:
     ofBufferObject pixelBufferBack, pixelBufferFront;
     ofPixels pixels;
@@ -26,7 +27,7 @@ private:
     bool isRecording = true;
     string dirPath;
     //----Vezer
-    ofxVezer::Parser parser;
-    ofxVezer::Composition comp;
-    ofxVezer::Provider provider;
+//    ofxVezer::Parser parser;
+//    ofxVezer::Composition comp;
+//    ofxVezer::Provider provider;
 };

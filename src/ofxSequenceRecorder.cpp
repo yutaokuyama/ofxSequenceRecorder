@@ -16,32 +16,26 @@ void ofxSequenceRecorder::setup(){
     pixelBufferFront.allocate(ofGetWidth()*ofGetHeight()*4,GL_DYNAMIC_READ);
 }
 
-
-void ofxSequenceRecorder::VezerSetup(string path){
-    vector<ofxVezer::Composition> comps = ofxVezer::ParserCereal::load("0130.xml", "testt.bin");
-    comp = comps[0];
-    comp.combine(comps[1]);
-    parser.redraw(comp);
-    
-}
-
-void ofxSequenceRecorder::VezerUpdate(){
-    //  int frame = int(ofGetElapsedTimef() * comp.fps)  % comp.length;
-    //  frame = ofGetFrameNum()+offsetFrame;
-    provider.setCurrentTracks(comp, frame);
-    while ( provider.hasWaitingMessages() ) {
-        ofxOscMessage m;
-        provider.getNextMessage(&m);
-        string addr = m.getAddress();
-        if(addr == "/hoge"){
-           
-        }
-        
-        
-        
-    }
-    
-}
+//
+//void ofxSequenceRecorder::VezerSetup(string path){
+//    vector<ofxVezer::Composition> comps = ofxVezer::ParserCereal::load("0130.xml", "testt.bin");
+//    comp = comps[0];
+//    comp.combine(comps[1]);
+//    parser.redraw(comp);
+//}
+//
+//void ofxSequenceRecorder::VezerUpdate(){
+//    //  int frame = int(ofGetElapsedTimef() * comp.fps)  % comp.length;
+//    //  frame = ofGetFrameNum()+offsetFrame;
+//    provider.setCurrentTracks(comp, frame);
+//    while ( provider.hasWaitingMessages() ) {
+//        ofxOscMessage m;
+//        provider.getNextMessage(&m);
+//        string addr = m.getAddress();
+//        if(addr == "/hoge"){
+//        }
+//    }
+//}
 
 void ofxSequenceRecorder::draw(){
     
@@ -58,12 +52,7 @@ void ofxSequenceRecorder::record(ofFbo& scene){
         
         ofSaveImage(pixels,dirPath+"/"+ofToString(ofGetFrameNum())+".png");
         pixelBufferFront.unmap();
-        
-        // swap the front and back buffer so we are always
-        // copying the texture to one buffer and reading
-        // back from another to avoid stalls
         swap(pixelBufferBack,pixelBufferFront);
-        //record
     }
 }
 
