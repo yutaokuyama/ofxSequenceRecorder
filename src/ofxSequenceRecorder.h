@@ -20,12 +20,13 @@ public:
 //    void VezerUpdate();
     void record(ofFbo& scene);
     void draw();
+        bool isRecording = true;
     
 private:
     ofBufferObject pixelBufferBack, pixelBufferFront;
     ofPixels pixels;
     int frame= 0;
-    bool isRecording = true;
+
     string dirPath;
     //----Vezer
 //    ofxVezer::Parser parser;
