@@ -19,6 +19,7 @@ public:
 //    void VezerSetup(string path);
 //    void VezerUpdate();
     void record(ofFbo& scene);
+        void record(ofFbo& scene,int frame);
     void draw();
         bool isRecording = true;
     
