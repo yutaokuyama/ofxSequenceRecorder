@@ -55,10 +55,13 @@ void ofxSequenceRecorder::record(ofFbo& scene){
         pixelBufferFront.bind(GL_PIXEL_UNPACK_BUFFER);
         unsigned char * p = pixelBufferFront.map<unsigned char>(GL_READ_ONLY);
         pixels.setFromExternalPixels(p,scene.getWidth(),scene.getHeight(),OF_PIXELS_RGBA);
-        ofSaveImage(pixels,dirPath+"/"+ofToString(ofGetFrameNum())+".png");
+
+        ofSaveImage(pixels,dirPath+"/"+ofToString(ofGetFrameNum())+".jpg");
+                 //  pixelBufferFront.unbind(GL_PIXEL_UNPACK_BUFFER);
         pixelBufferFront.unmap();
-        pixelBufferFront.unbind(GL_PIXEL_UNPACK_BUFFER);
+
                 swap(pixelBufferBack,pixelBufferFront);
+     
     }
 }
 
